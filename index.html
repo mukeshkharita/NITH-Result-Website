@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NITH Result portal</title>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+<body>
+	<div class="header">
+		<h1>Welcome to NITH Result Portal</h1>
+	</div>
+	<div class="nav">
+		<a href="#">Rank using Roll Number</a>
+		<a href="#">Rank using Name</a>
+		<a href="#">Class rank</a>
+		<a href="#">Year Rank</a>
+	</div>
+	<div id="rollnoform">
+		<form action="./php/roll.php" method="post">
+			<label>Roll No.</label>
+			<input type="text" placeholder="Enter your Roll No." maxlength=10 name="RollNumber" required="required">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div id="rollnoform">
+		<form action="./php/name.php" method="post">
+			<label>Name </label>
+			<input type="text" placeholder="Enter your Name" name="Name" required="required">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div id="rollnoform">
+		<form action="./php/class.php" method="post">
+			<label>Year</label>
+			<select name="year">
+				<option value="null">Select...</option>
+				<option value="15">First</option>
+				<option value="14">Second</option>
+				<option value="13">Third</option>
+				<option value="12">Final</option>
+				<option value="11">Super Final</option>
+			</select></br>
+			<label>Branch</label>
+			<select name="branch">
+				<option value="null">Select...</option>
+				<option value="1">Civil</option>
+				<option value="2">Electrical</option>
+				<option value="3">Mechanical</option>
+				<option value="4">Electonics</option>
+				<option value="5">Computer</option>
+				<option value="6">Architecture</option>
+				<option value="7">Chemical</option>
+			</select>
+		</br>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<div id="rollnoform">
+		<form action="./php/year.php" method="post">
+			<label>Year</label>
+			<select name="year">
+				<option value="null">Select...</option>
+				<option value="15">First</option>
+				<option value="14">Second</option>
+				<option value="13">Third</option>
+				<option value="12">Final</option>
+				<option value="11">Super Final</option>
+			</select>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	<footer>
+		No rights reserved Open Source
+	</footer>
+	<script type="text/javascript">
+
+	</script>
+</body>
+</html>
