@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<title>Subjects Information</title>
 	<style type="text/css">
 	p{
 		text-align: center;
@@ -11,14 +12,19 @@
 		  background: rgb(229,76,16);
 		  margin-top: 10px;
 	}
+	#supply
+	{
+		background: rgb(229,76,16);
+		color: white;
+		margin: 10% 0;
+	}
 	</style>
+	
 </head>
 
 <?php
-	$db_user="root";
-	$db_pass="justgoogleit";
-	$db_name="results";
-	@ $db = new mysqli('localhost', 'root', 'justgoogleit', 'results');
+	include 'db_connect.php';
+	@ $db = new mysqli($db_host, $db_root, $db_password, $db_name);
 	if (mysqli_connect_errno()) 
 	{
 		echo "Error: Could not connect to database. Please try again later.";
@@ -28,6 +34,7 @@
 	$query = "select * from subjects where semester_no = '$rollno'";
 	$result = $db->query($query);
 	$num_results = $result->num_rows;
+	$count=0;
 	echo "<p>Number of Results found: ".$num_results."</p>";
 	?>
 	<table class="inventory" width="100%">
@@ -62,10 +69,36 @@
 		<td><?php echo stripslashes($row['TotalCR']) ?></td>
 	</tr>
 		<?php
+		if(stripslashes($row['ObtainCR']) =="0")
+		{
+			$count++;
+		}
+		
 	}
 	?>
 	</tr>
 	</table>
 	<?php
+	if($count==0)
+	{
+		?>
+		<p id="supply">
+			<?php
+				echo "Well Done All Clear";
+			?>
+		</p>
+		<?php
+	}
+	else
+	{
+		?>
+		<p id="supply">
+			<?php
+				echo "$count Supplies";
+			?>
+		</p>
+		<?php
+	}
 ?>
+
 </html>

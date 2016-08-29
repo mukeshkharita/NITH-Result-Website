@@ -3,6 +3,7 @@
 <head>
 	<title>NITH Result portal</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
 </head>
 <body>
 	<div class="header">
@@ -15,21 +16,21 @@
 		<a href="#">Year Rank</a>
 	</div>
 	<div id="rollnoform">
-		<form action="./php/roll.php" method="post">
+		<form action="./php/roll.php" method="post" id="form1">
 			<label>Roll No.</label>
 			<input type="text" placeholder="Enter your Roll No." maxlength=10 name="RollNumber" required="required">
 			<input type="submit" value="Submit">
 		</form>
 	</div>
 	<div id="rollnoform">
-		<form action="./php/name.php" method="post">
+		<form action="./php/name.php" method="post" id="form1">
 			<label>Name </label>
 			<input type="text" placeholder="Enter your Name" name="Name" required="required">
 			<input type="submit" value="Submit">
 		</form>
 	</div>
 	<div id="rollnoform">
-		<form action="./php/class.php" method="post">
+		<form action="./php/class.php" method="post" id="form1">
 			<label>Year</label>
 			<select name="year">
 				<option value="null">Select...</option>
@@ -55,7 +56,7 @@
 		</form>
 	</div>
 	<div id="rollnoform">
-		<form action="./php/year.php" method="post">
+		<form action="./php/year.php" method="post" id="form1">
 			<label>Year</label>
 			<select name="year">
 				<option value="null">Select...</option>
@@ -72,7 +73,8 @@
 		No rights reserved Open Source
 	</footer>
 	<script type="text/javascript">
-
+		document.getElementById("myForm").reset();
 	</script>
+	
 </body>
 </html>

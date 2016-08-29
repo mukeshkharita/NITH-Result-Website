@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<title>Students Information</title>
 	<style type="text/css">
 	p{
 		text-align: center;
@@ -15,10 +16,8 @@
 </head>
 
 <?php
-	$db_user="root";
-	$db_pass="justgoogleit";
-	$db_name="results";
-	@ $db = new mysqli('localhost', 'root', 'justgoogleit', 'results');
+	include 'db_connect.php';
+	@ $db = new mysqli($db_host, $db_root, $db_password, $db_name);
 	if (mysqli_connect_errno()) 
 	{
 		echo "Error: Could not connect to database. Please try again later.";
@@ -47,12 +46,23 @@
 	$year = $year.($branch);
 	$year1 = $year1.$branch;
 	$temp = $branch;
+	$temp2;
 	if($temp=="5")
-		$temp="1";
+		$temp2="1";
 	else if($temp=="4")
-		$temp="2";
-	$year2 = $year2.$temp;
-	$query = "select * from students where roll_no like '$year%' or roll_no like '$year1%' or roll_no like '$year2%' order by cgpi desc";
+		$temp2="2";
+	$year2 = $year2.$temp2;
+	echo $year1;
+	echo $year;
+	echo $year2;
+	if($temp2==1 || $temp2==2)
+	{
+		$query = "select * from students where roll_no like '$year%' or roll_no like '$year1%' or roll_no like '$year2%' order by cgpi desc";
+	}
+	else
+	{
+		$query = "select * from students where roll_no like '$year%' or roll_no like '$year1%' order by cgpi desc";
+	}
 	$result = $db->query($query);
 	$num_results = $result->num_rows;
 	echo "<p>Number of Results found: ".$num_results."</p>";
@@ -69,6 +79,7 @@
 			<col id="cgpi">
 			<col id="college">
 			<col id="year">
+			<col id="getseminfo">
 		</colgroup>
 		<tr>
 			<th scope="col">Sr. No.</th>
@@ -77,6 +88,7 @@
 			<th scope="col">CGPI</th>
 			<th scope="col">College Rank</th>
 			<th scope="col">Year Rank</th>
+			<th scope="col">Get Semesters Info</th>
 		</tr>
 		<tr>
 		
@@ -93,7 +105,9 @@
 		<td><?php echo stripslashes($row['year_rank']) ?></td>
 		<td>
 			<form action="semester.php" method="post">
-				<input type="submit" value="<?php echo $row['roll_no'] ?>" id="getit" name="Name">
+				<input type="hidden" value="<?php echo $row['roll_no'] ?>" id="getit" name="Name">
+				<input type="hidden" value="<?php echo $row['cgpi'] ?>" id="getit" name="CGPI">
+				<input type="submit" value="Get It" id="getit" name="Submit">
 			</form>
 		</td>
 	</tr>

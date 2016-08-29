@@ -72,6 +72,11 @@ input[type="submit"]
 	cursor: pointer;
 	height: 35px;
 }
+input[type="submit"]:hover
+{
+	background-color: white;
+	color: black;
+}
 #rollnoform
 {
 	border: 1px solid black;

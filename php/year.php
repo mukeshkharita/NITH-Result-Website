@@ -1,6 +1,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<title>Students Information</title>
 	<style type="text/css">
 	p{
 		text-align: center;
@@ -15,17 +16,15 @@
 </head>
 
 <?php
-	$db_user="root";
-	$db_pass="justgoogleit";
-	$db_name="results";
-	@ $db = new mysqli('localhost', 'root', 'justgoogleit', 'results');
+	include 'db_connect.php';
+	@ $db = new mysqli($db_host, $db_root, $db_password, $db_name);
 	if (mysqli_connect_errno()) 
 	{
 		echo "Error: Could not connect to database. Please try again later.";
 		exit;
 	}
 	$rollno = $_POST['year'];
-	$query = "select * from students where roll_no like '$rollno%' or roll_no like 'IIITU$rollno%' order by cgpi desc";
+	$query = "select * from students where (roll_no like '$rollno%' or roll_no like 'IIITU$rollno%') order by cgpi desc";
 	$result = $db->query($query);
 	$num_results = $result->num_rows;
 	echo "<p>Number of Results found: ".$num_results."</p>";
@@ -41,6 +40,7 @@
 			<col id="cgpi">
 			<col id="college">
 			<col id="year">
+			<col id="getseminfo">
 		</colgroup>
 		<tr>
 			<th scope="col">Sr. No.</th>
@@ -49,6 +49,7 @@
 			<th scope="col">CGPI</th>
 			<th scope="col">College Rank</th>
 			<th scope="col">Year Rank</th>
+			<th scope="col">Get Semester Info</th>
 		</tr>
 		<tr>
 		
@@ -66,7 +67,9 @@
 		<td><?php echo stripslashes($row['year_rank'])?></td>
 		<td>
 			<form action="semester.php" method="post">
-				<input type="submit" value="<?php echo $row['roll_no'] ?>" id="getit" name="Name">
+				<input type="hidden" value="<?php echo $row['roll_no'] ?>" id="getit" name="Name">
+				<input type="hidden" value="<?php echo $row['cgpi'] ?>" id="getit" name="CGPI">
+				<input type="submit" value="Get It" id="getit" name="Submit">
 			</form>
 		</td>
 	</tr>
