@@ -10,26 +10,26 @@
 		<h1>Welcome to NITH Result Portal</h1>
 	</div>
 	<div class="nav">
-		<a href="#">Rank using Roll Number</a>
-		<a href="#">Rank using Name</a>
-		<a href="#">Class Rank</a>
-		<a href="#">Year Rank</a>
+		<a href="#rollnoform">Rank using Roll Number</a>
+		<a href="#nameform">Rank using Name</a>
+		<a href="#classform">Class Rank</a>
+		<a href="#yearform">Year Rank</a>
 	</div>
-	<div id="rollnoform">
+	<div id="rollnoform" class="formcard">
 		<form action="./php/roll.php" method="post" id="form1">
 			<label>Roll No.</label>
 			<input type="text" placeholder="Enter your Roll No." maxlength=10 name="RollNumber" required="required">
 			<input type="submit" value="Submit">
 		</form>
 	</div>
-	<div id="rollnoform">
+	<div id="nameform" class="formcard">
 		<form action="./php/name.php" method="post" id="form1">
 			<label>Name </label>
 			<input type="text" placeholder="Enter your Name" name="Name" required="required">
 			<input type="submit" value="Submit">
 		</form>
 	</div>
-	<div id="rollnoform">
+	<div id="classform" class="formcard">
 		<form action="./php/class.php" method="post" id="form1">
 			<label>Year</label>
 			<select name="year">
@@ -55,7 +55,7 @@
 			<input type="submit" value="Submit">
 		</form>
 	</div>
-	<div id="rollnoform">
+	<div id="yearform" class="formcard">
 		<form action="./php/year.php" method="post" id="form1">
 			<label>Year</label>
 			<select name="year">
