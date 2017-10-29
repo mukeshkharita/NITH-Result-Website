@@ -1,3 +1,4 @@
 # NITH-Result-Website
-# Performance relatively Class,Year,Departmet etc.
-# Performane using Graphs.
+
+# Performance by Class, Year, Department etc.
+# Performance visualization using Graphs.
