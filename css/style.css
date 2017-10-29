@@ -11,14 +11,29 @@
     src: url('../fonts/whitney-book.ttf');
 }
 
+html {
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+}
 body
 {
 	max-width: 940px;
 	margin: 0 auto;
-	background-color: #eee;
-	border: 1px solid black;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(0,0,0,.26);
+    border-radius: 2px;
 	box-shadow: 10px 10px 10px rgba(0,0,0,.7);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
 }
+
+a {
+    text-decoration: none;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
 .header h1
 {
 	text-align: center;
@@ -35,16 +50,16 @@ body
 	margin: 6% 16%;
 }
 .nav a {
-	text-decoration: none;
 	border: 1px solid black;
 	background-color: black;
 	padding: 10px;
 	color: white;
+    margin: 0 0 0 10px;
 	display: inline-block;
 	box-shadow: 5px 5px 5px rgba(0,0,0,.5);
 	font-family: 'WhitneyBook';
 	font-weight: normal;
-    font-size: 20px;
+    font-size: 1.2em;
 }
 .formcard label
 {
@@ -61,7 +76,7 @@ body
 }
 input[type="text"],input[type="submit"],select
 {
-	font-size: 2em;
+	font-size: 1.3em;
 	background-color: black;
 	border: none;
 	height: 60px;
