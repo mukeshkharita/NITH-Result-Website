@@ -1,12 +1,10 @@
-*
-{
+* {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 }
 
-@font-face 
-{
+@font-face {
     font-family: 'WhitneyBook';
     src: url('../fonts/whitney-book.ttf');
 }
@@ -15,8 +13,8 @@ html {
     background-color: rgb(255, 255, 255);
     padding: 50px;
 }
-body
-{
+
+body {
 	max-width: 940px;
 	margin: 0 auto;
 	background-color: rgb(247,247,247);
@@ -33,24 +31,22 @@ a {
     cursor: pointer;
 }
 
-.header h1
-{
+.header h1 {
 	text-align: center;
-	background-color: #000000;
-	color: white;
+	background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	color: rgb(119,119,119);
 	font-size: 3em;
 	margin-top: 0.7em;
-	box-shadow: 10px 10px 10px rgba(0,0,0,.5);
 	font-family: 'WhitneyBook';
-	font-weight: normal;
+	font-weight: bold;
 }
-.nav
-{
+
+.nav {
 	margin: 6% 16%;
 }
+
 .nav a {
-	border: 1px solid black;
-	background-color: black;
 	padding: 10px;
 	color: white;
     margin: 0 0 0 10px;
@@ -60,34 +56,59 @@ a {
     font-size: 1.2em;
 }
 
-
-.formcard label
-{
+.formcard label {
 	display: inline-block;
 	vertical-align: top;
 	width: 100px;
 	margin-left: 50px;
 	font-size: 1.2em;
 	margin-top: 28px;
-	padding: 10px 0;
+	padding: 5px 5px;
     color: black;
 	font-family: 'WhitneyBook';
 	font-weight: normal;
 }
 
-input[type="text"],select
-{
+input[type="text"],select {
 	font-size: 1.3em;
-	background-color: black;
-	border: none;
+	background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(117,117,117);
 	height: 48px;
     padding: 10px;
 	margin-top: 20px;
 	width: 320px;
 	border-radius: 2px;
-	color: white;
+	color: black;
 	font-family: 'WhitneyBook';
 	font-weight: normal;
+}
+
+.red {
+    background: rgb(238,104,93);
+}
+.red:hover {
+    background: rgb(234,67,53);
+}
+
+.orange {
+    background: rgb(251,201,54);
+}
+.orange:hover {
+    background: rgb(251,188,5);
+}
+
+.green {
+    background: rgb(92,185,117);
+}
+.green:hover {
+    background: rgb(52,168,83);
+}
+
+.blue {
+    background: rgb(103,157,246);
+}
+.blue:hover {
+    background: rgb(66,133,244);
 }
 
 .submit-button {
@@ -106,8 +127,7 @@ input[type="text"],select
 	font-size: 1.2em;
 }
 
-input[type="submit"]
-{
+input[type="submit"] {
 	width: 200px;
     background: rgb(52,168,83);
     padding: 8px 16px;
@@ -118,20 +138,20 @@ input[type="submit"]:hover {
     background: rgb(234,67,53); 
 }
 
-.formcard
-{
+.formcard {
 	max-width: 600px;
 	margin: 50px auto;
 	background-color: rgb(255, 255, 255);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+    border-radius: 2px;
 	font-family: 'WhitneyBook';
 }
-footer
-{
+
+footer {
 	text-align: center;
 	font-family: 'WhitneyBook';
-	font-weight: normal;
+	font-weight: bold;
 	padding: 20px 0;
-	font-size: 1.3em;
-	color: blue;
+	font-size: 1em;
+	color: rgb(117, 117, 117);
 }
